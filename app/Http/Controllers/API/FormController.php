@@ -22,7 +22,7 @@ class FormController extends Controller
         $student->nama = $request->nama;
         $student->alamat = $request->alamat;
         $student->no_telp = $request->no_telp;
-        $student->jns_klamin = $request->no_telp;
+        $student->jns_klamin = $request->jns_klamin;
         $student->save();
 
         return response()->json([
