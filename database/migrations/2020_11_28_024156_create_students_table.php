@@ -18,6 +18,7 @@ class CreateStudentsTable extends Migration
             $table->string('nama', 50);
             $table->text('alamat');
             $table->string('no_telp', 14);
+            $table->string('jns_klamin', 20);
             $table->timestamps();
         });
     }

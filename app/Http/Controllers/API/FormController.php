@@ -13,7 +13,8 @@ class FormController extends Controller
         $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
-            'no_telp' => 'required'
+            'no_telp' => 'required',
+            'jns_klamin' => 'required'
         ]);
 
         // dd($request->all());
@@ -21,6 +22,7 @@ class FormController extends Controller
         $student->nama = $request->nama;
         $student->alamat = $request->alamat;
         $student->no_telp = $request->no_telp;
+        $student->jns_klamin = $request->no_telp;
         $student->save();
 
         return response()->json([
@@ -45,13 +47,15 @@ class FormController extends Controller
         $request->validate([
             'nama' => 'required',
             'alamat' => 'required',
-            'no_telp' => 'required'
+            'no_telp' => 'required',
+            'jns_klamin' => 'required'
         ]);
 
         $student->update([
             'nama' => $request->nama,
             'alamat' => $request->alamat,
-            'no_telp' => $request->no_telp
+            'no_telp' => $request->no_telp,
+            'jns_klamin' => $request->jns_klamin
         ]);
 
         return response()->json([

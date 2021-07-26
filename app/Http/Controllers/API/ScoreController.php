@@ -16,13 +16,15 @@ class ScoreController extends Controller
         $student->nama      = $request->nama;
         $student->alamat    = $request->alamat;
         $student->no_telp   = $request->no_telp;
+        $student->jns_klamin = $request->jns_klamin;
         $student->save();
 
         foreach ($request->list_pelajaran as $key => $value) {
             $score = array(
                 'student_id' => $student->id,
                 'mata_pelajaran' => $value['mata_pelajaran'],
-                'nilai' => $value['nilai']
+                'nilai' => $value['nilai'],
+                'guru' => $value['guru']
             );
             $scores = Score::create($score);
         }

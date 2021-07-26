@@ -18,6 +18,7 @@ class CreateScoresTable extends Migration
             $table->integer('student_id');
             $table->string('mata_pelajaran');
             $table->integer('nilai');
+            $table->string('guru');
             $table->timestamps();
         });
     }
