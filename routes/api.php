@@ -27,11 +27,15 @@ Route::group(['middleware' => 'auth:sanctum'], function(){
     Route::post('/edit/{id}', [FormController::class, 'update']);
     Route::get('/delete/{id}', [FormController::class, 'delete']);
 
-    //crud score with relation to student
-    Route::post('/create-score-student', [ScoreController::class, 'create']);
+   
 
     Route::get('/logout', [AuthController::class, 'logout']);
 });
+
+ //crud score with relation to student
+ Route::post('/create-score-student', [ScoreController::class, 'create']);
+ Route::get('/edit-score-student/{id}', [ScoreController::class, 'edit']);
+ Route::get('/delete-score-student/{id}', [ScoreController::class, 'delete']);
 
 Route::post('/login', [AuthController::class, 'login']);
 
